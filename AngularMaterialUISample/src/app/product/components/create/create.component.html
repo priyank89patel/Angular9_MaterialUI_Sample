@@ -1,0 +1,45 @@
+<div class="create-container" noValidate>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form" autocomplete="off">
+        <label>First Name</label>
+        <mat-form-field class="form-element" appearance="outline">
+            <input matInput formControlName="firstName">
+            <mat-hint>Max 30 characters</mat-hint>
+            <mat-error *ngIf="!formGroup.controls['firstName'].valid && formGroup.controls['firstName'].touched">
+                {{getFirstNameErrorMsg()}}
+            </mat-error>
+        </mat-form-field>
+
+        <label>Last Name</label>
+        <mat-form-field class="form-element" appearance="outline">
+
+            <input matInput formControlName="lastName">
+            <mat-hint>Max 30 characters</mat-hint>
+            <mat-error *ngIf="!formGroup.controls['lastName'].valid && formGroup.controls['lastName'].touched">
+                {{getLastNameErrorMsg()}}
+            </mat-error>
+        </mat-form-field>
+
+        <label>Credit Score Name</label>
+        <mat-form-field class="form-element" appearance="outline">
+            <input matInput formControlName="creditScore">
+            <mat-hint>Number between 1 and 800</mat-hint>
+            <mat-error *ngIf="!formGroup.controls['creditScore'].valid && formGroup.controls['creditScore'].touched">
+                {{getCreditScoreErrorMsg()}}
+            </mat-error>
+        </mat-form-field>
+
+        <label>Annual Income</label>
+        <mat-form-field class="form-element" appearance="outline">
+            <input matInput formControlName="annualIncome">
+            <mat-hint>Number greater than 0</mat-hint>
+            <mat-error *ngIf="!formGroup.controls['annualIncome'].valid && formGroup.controls['annualIncome'].touched">
+                {{getAnnualIncomeErrorMsg()}}
+            </mat-error>
+        </mat-form-field>
+
+        <div class="form-element">
+            <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Submit
+                Form</button>
+        </div>
+    </form>
+</div>

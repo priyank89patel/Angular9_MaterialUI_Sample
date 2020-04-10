@@ -1,0 +1,16 @@
+.banner{
+    height: 200px;
+    background-color: #DCDCDC;
+    display: table;
+    width: 100%;
+}
+
+.banner h1{
+    margin:0;
+    padding:0;
+    color:#696969;
+    font-size:40pt;
+    font-weight: normal;
+    display:table-cell;
+    vertical-align: middle;
+}
