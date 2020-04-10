@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { productList } from '../../mock-product-list';
 
 @Component({
   selector: 'app-create',
@@ -58,7 +59,7 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(formPost) {
-
+    //productList.push({ id: 7, name: 'New in Market', description: '10 years at %15' });
   }
 
 }
